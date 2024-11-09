@@ -1,0 +1,303 @@
+:root {
+    /* Light Modern Color Palette */
+    --bg-primary: #f8fafc;      /* Very light background */
+    --bg-secondary: #ffffff;    /* White sections */
+    --accent-primary: #e2e8f0;  /* Light accent */
+    --accent-secondary: #cbd5e1;
+    --highlight: #94a3b8;
+    --text-primary: #334155;    /* Dark text */
+    --text-secondary: #64748b;  /* Medium text */
+    --border: #e2e8f0;
+    --shadow: rgba(0, 0, 0, 0.05);
+}
+
+/* Basic Layout */
+body {
+    background-color: var(--bg-primary);
+    margin: 0;
+    padding: 0;
+    color: var(--text-primary);
+}
+
+#sort-cover {
+    width: 88%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Visualization Elements */
+#sort-container {
+    background-color: transparent !important;
+    border: 1px solid var(--border);
+    height: 400px;
+    position: relative;
+    margin: 2rem 0;
+    padding: 2rem 0;
+    border-radius: 8px;
+}
+
+.element {
+    background-color: #94a3b8 !important;
+    position: absolute;
+    bottom: 0;
+    transition: all 0.3s ease-in-out;
+    transform-origin: bottom;
+    margin-left: -1px;
+    border-radius: 0;
+}
+
+.element-red {
+    background-color: #a8b4c5 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.element-blue {
+    background-color: #bcc5d2 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.element-green {
+    background-color: #d0d6df !important;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Info Parent */
+.info-parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Implementation Box */
+.menu-box {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px var(--shadow);
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.menu-box > div:first-of-type {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+#menu-code {
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.menu-btns {
+    display: flex;
+    justify-content: flex-start;  /* Changed to left align */
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 8px;
+    gap: 8px;
+}
+
+.menu-btns button {
+    padding: 6px 12px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-btns button img {
+    width: 20px;
+    height: 20px;
+}
+
+.menu-btns-activated {
+    background: var(--accent-primary) !important;
+}
+
+#code-content {
+    padding: 25px;
+    background: var(--bg-secondary);
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* Info Sections */
+.sort-description, .table-box {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.sort-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.sort-table th {
+    background: var(--accent-primary);
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid var(--border);
+}
+
+.sort-table td {
+    padding: 1rem;
+    border: 1px solid var(--border);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #sort-cover {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .info-parent {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .menu-box {
+        padding: 1rem;
+    }
+}
+
+/* Box Container with equal spacing */
+#box {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px var(--shadow);
+    padding: 2.5rem;
+    width: 88%;
+    margin: 2.5rem auto;
+    margin-top: 80px;
+}
+
+/* Title spacing */
+.title {
+    font-size: 2.5rem;          /* Larger font size */
+    font-weight: 600;           /* Slightly bolder */
+    color: var(--text-primary);
+    margin-bottom: 2.5rem;      /* More space below */
+    letter-spacing: 0.5px;      /* Better letter spacing */
+    font-family: 'Inter', sans-serif;  /* Modern font */
+    position: relative;
+    padding-bottom: 0.5rem;     /* Space for border */
+}
+
+/* Optional: Add a subtle underline effect */
+.title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-secondary);
+    border-radius: 2px;
+}
+
+/* Controls and slider container */
+div[style="float: right; white-space: nowrap;"] {
+    margin-bottom: 0;
+}
+
+/* Slider and Controls */
+.slider-container {
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+#slider {
+    width: 200px;
+    margin: 0 10px;
+    -webkit-appearance: none;
+    height: 4px;
+    background: var(--accent-primary);
+    border-radius: 2px;
+    outline: none;
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--text-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--text-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+#slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+#elements-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+}
+
+#slider-span {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Animation states for sorting */
+.element-red {
+    background-color: #a8b4c5 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.element-blue {
+    background-color: #bcc5d2 !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.element-green {
+    background-color: #d0d6df !important;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Add animation for height changes */
+.element {
+    animation: heightChange 0.3s ease-in-out;
+}
+
+@keyframes heightChange {
+    from {
+        transform: scaleY(0);
+    }
+    to {
+        transform: scaleY(1);
+    }
+}
+
+/* Clear div spacing */
+div[style="clear: both; padding: 20px 0;"] {
+    padding: 2rem 0;
+}

@@ -1,0 +1,378 @@
+{% extends "parents/base.html" %}
+{% block head %}
+<meta name="description" content="A visualization of 15+ sorting algorithms, including Quick Sort, Merge Sort, Selection Sort and more!">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+<script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}" defer></script>
+{% endblock %}
+{% block content %}
+<div class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title">
+            <span class="highlight">Sort</span>
+            <span class="visualizer">Visualizer</span>
+        </h1>
+        <p class="hero-description">Experience sorting algorithms in action with our interactive Sort Visualizer—learn, explore, and visualize how different sorting methods organize data step by step!</p>
+    </div>
+    <div class="hero-animation">
+        <div class="floating-bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="categories-wrapper">
+        <div class="category">
+            <h2>Efficient Algorithms</h2>
+            <div class="algorithms-grid">
+                <div class="algorithm-card">
+                    <a href="/quicksort/">
+                        <h3>Quick Sort</h3>
+                        <div class="complexity-info">
+                            <div class="complexity">
+                                <span class="label">Best Case:</span>
+                                <span class="value">O(n log n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Average Case:</span>
+                                <span class="value">O(n log n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Worst Case:</span>
+                                <span class="value">O(n²)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Space:</span>
+                                <span class="value">O(log n)</span>
+                            </div>
+                        </div>
+                        <p class="algorithm-description">
+                            Quick Sort is a highly efficient, comparison-based algorithm that uses a divide-and-conquer strategy. 
+                            It works by selecting a 'pivot' element and partitioning the array around it.
+                        </p>
+                    </a>
+                </div>
+
+                <div class="algorithm-card">
+                    <a href="/mergesort/">
+                        <h3>Merge Sort</h3>
+                        <div class="complexity-info">
+                            <div class="complexity">
+                                <span class="label">Best Case:</span>
+                                <span class="value">O(n log n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Average Case:</span>
+                                <span class="value">O(n log n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Worst Case:</span>
+                                <span class="value">O(n log n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Space:</span>
+                                <span class="value">O(n)</span>
+                            </div>
+                        </div>
+                        <p class="algorithm-description">
+                            Merge Sort is a divide-and-conquer algorithm that works by dividing the input array into two halves, 
+                            sorting each half, and then merging the two sorted halves.
+                        </p>
+                    </a>
+                </div>
+
+                <div class="algorithm-card">
+                    <a href="/heapsort/">
+                        <h3>Heap Sort</h3>
+                        <div class="complexity-info">
+                            <div class="complexity">
+                                <span class="label">Best Case:</span>
+                                <span class="value">O(n log n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Average Case:</span>
+                                <span class="value">O(n log n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Worst Case:</span>
+                                <span class="value">O(n log n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Space:</span>
+                                <span class="value">O(1)</span>
+                            </div>
+                        </div>
+                        <p class="algorithm-description">
+                            Heap Sort is a comparison-based algorithm that uses a binary heap data structure. 
+                            It works by building a max heap and repeatedly extracting the maximum element.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Simple Algorithms</h2>
+            <div class="algorithms-grid">
+                <div class="algorithm-card">
+                    <a href="/bubblesort/">
+                        <h3>Bubble Sort</h3>
+                        <div class="complexity-info">
+                            <div class="complexity">
+                                <span class="label">Best Case:</span>
+                                <span class="value">O(n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Average Case:</span>
+                                <span class="value">O(n²)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Worst Case:</span>
+                                <span class="value">O(n²)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Space:</span>
+                                <span class="value">O(1)</span>
+                            </div>
+                        </div>
+                        <p class="algorithm-description">
+                            Bubble Sort repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.
+                        </p>
+                    </a>
+                </div>
+
+                <div class="algorithm-card">
+                    <a href="/insertionsort/">
+                        <h3>Insertion Sort</h3>
+                        <div class="complexity-info">
+                            <div class="complexity">
+                                <span class="label">Best Case:</span>
+                                <span class="value">O(n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Average Case:</span>
+                                <span class="value">O(n²)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Worst Case:</span>
+                                <span class="value">O(n²)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Space:</span>
+                                <span class="value">O(1)</span>
+                            </div>
+                        </div>
+                        <p class="algorithm-description">
+                            Insertion Sort builds the final sorted array one item at a time, by repeatedly inserting a new element into the sorted portion of the array.
+                        </p>
+                    </a>
+                </div>
+
+                <div class="algorithm-card">
+                    <a href="/selectionsort/">
+                        <h3>Selection Sort</h3>
+                        <div class="complexity-info">
+                            <div class="complexity">
+                                <span class="label">Best Case:</span>
+                                <span class="value">O(n²)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Average Case:</span>
+                                <span class="value">O(n²)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Worst Case:</span>
+                                <span class="value">O(n²)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Space:</span>
+                                <span class="value">O(1)</span>
+                            </div>
+                        </div>
+                        <p class="algorithm-description">
+                            Selection Sort divides the input into a sorted and unsorted region, and repeatedly selects the smallest element from the unsorted region.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Special Purpose</h2>
+            <div class="algorithms-grid">
+                <div class="algorithm-card">
+                    <a href="/radixsort/">
+                        <h3>Radix Sort</h3>
+                        <div class="complexity-info">
+                            <div class="complexity">
+                                <span class="label">Best Case:</span>
+                                <span class="value">O(nk)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Average Case:</span>
+                                <span class="value">O(nk)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Worst Case:</span>
+                                <span class="value">O(nk)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Space:</span>
+                                <span class="value">O(n+k)</span>
+                            </div>
+                        </div>
+                        <p class="algorithm-description">
+                            Radix Sort is a non-comparative sorting algorithm that sorts numbers by processing individual digits from least significant to most significant.
+                        </p>
+                    </a>
+                </div>
+
+                <div class="algorithm-card">
+                    <a href="/shellsort/">
+                        <h3>Shell Sort</h3>
+                        <div class="complexity-info">
+                            <div class="complexity">
+                                <span class="label">Best Case:</span>
+                                <span class="value">O(n log n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Average Case:</span>
+                                <span class="value">O(n log n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Worst Case:</span>
+                                <span class="value">O(n log²n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Space:</span>
+                                <span class="value">O(1)</span>
+                            </div>
+                        </div>
+                        <p class="algorithm-description">
+                            Shell Sort is an optimization of insertion sort that allows the exchange of items that are far apart, making the sorting more efficient.
+                        </p>
+                    </a>
+                </div>
+
+                <div class="algorithm-card">
+                    <a href="/bitonicsort/">
+                        <h3>Bitonic Sort</h3>
+                        <div class="complexity-info">
+                            <div class="complexity">
+                                <span class="label">Best Case:</span>
+                                <span class="value">O(log²n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Average Case:</span>
+                                <span class="value">O(log²n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Worst Case:</span>
+                                <span class="value">O(log²n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Space:</span>
+                                <span class="value">O(1)</span>
+                            </div>
+                        </div>
+                        <p class="algorithm-description">
+                            Bitonic Sort is a parallel algorithm for sorting that is especially suited for implementation in hardware and parallel processor arrays.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>Experimental & Fun</h2>
+            <div class="algorithms-grid">
+                <div class="algorithm-card">
+                    <a href="/bogosort/">
+                        <h3>Bogo Sort</h3>
+                        <div class="complexity-info">
+                            <div class="complexity">
+                                <span class="label">Best Case:</span>
+                                <span class="value">O(n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Average Case:</span>
+                                <span class="value">O(n × n!)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Worst Case:</span>
+                                <span class="value">O(∞)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Space:</span>
+                                <span class="value">O(1)</span>
+                            </div>
+                        </div>
+                        <p class="algorithm-description">
+                            Bogo Sort randomly shuffles the elements until they happen to be sorted. It's inefficient and meant as a joke algorithm.
+                        </p>
+                    </a>
+                </div>
+
+                <div class="algorithm-card">
+                    <a href="/pancakesort/">
+                        <h3>Pancake Sort</h3>
+                        <div class="complexity-info">
+                            <div class="complexity">
+                                <span class="label">Best Case:</span>
+                                <span class="value">O(n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Average Case:</span>
+                                <span class="value">O(n²)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Worst Case:</span>
+                                <span class="value">O(n²)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Space:</span>
+                                <span class="value">O(1)</span>
+                            </div>
+                        </div>
+                        <p class="algorithm-description">
+                            Pancake Sort sorts a disordered stack of pancakes by repeatedly flipping prefixes of the stack (like flipping pancakes on a griddle).
+                        </p>
+                    </a>
+                </div>
+
+                <div class="algorithm-card">
+                    <a href="/gnomesort/">
+                        <h3>Gnome Sort</h3>
+                        <div class="complexity-info">
+                            <div class="complexity">
+                                <span class="label">Best Case:</span>
+                                <span class="value">O(n)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Average Case:</span>
+                                <span class="value">O(n²)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Worst Case:</span>
+                                <span class="value">O(n²)</span>
+                            </div>
+                            <div class="complexity">
+                                <span class="label">Space:</span>
+                                <span class="value">O(1)</span>
+                            </div>
+                        </div>
+                        <p class="algorithm-description">
+                            Gnome Sort works by repeatedly swapping adjacent elements that are out of order, similar to how a garden gnome sorts flower pots.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

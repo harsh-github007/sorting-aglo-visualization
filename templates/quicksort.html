@@ -1,0 +1,150 @@
+{% extends "parents/base.html" %}
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/quicksort.css') }}">
+<script type="text/javascript" src="{{ url_for('static', filename='js/quicksort.js') }}" defer></script>
+{% endblock %}
+
+{% block content %}
+<div class="visualization-container">
+    <div class="header-section">
+        <h1>Quick Sort Visualization</h1>
+        <p class="algorithm-description">
+            Quick Sort is a highly efficient sorting algorithm that uses a divide-and-conquer strategy. 
+            It works by selecting a 'pivot' element and partitioning the array around it.
+        </p>
+    </div>
+
+    <div class="controls-section">
+        <div class="control-group">
+            <button id="generateNewArray" class="control-btn primary">Generate New Array</button>
+            <button id="startSort" class="control-btn success">Start Sorting</button>
+            <button id="pauseSort" class="control-btn warning" disabled>Pause</button>
+            <button id="resetSort" class="control-btn danger">Reset</button>
+        </div>
+        
+        <div class="control-group">
+            <div class="slider-container">
+                <label for="arraySize">Array Size:</label>
+                <input type="range" id="arraySize" min="5" max="100" value="50" class="slider">
+                <span id="arraySizeValue">50</span>
+            </div>
+            <div class="slider-container">
+                <label for="sortingSpeed">Speed:</label>
+                <input type="range" id="sortingSpeed" min="1" max="100" value="50" class="slider">
+                <span id="speedValue">50</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="visualization-section">
+        <div class="array-container" id="arrayContainer">
+            <!-- Bars will be generated here by JavaScript -->
+        </div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="color-box unsorted"></div>
+                <span>Unsorted</span>
+            </div>
+            <div class="legend-item">
+                <div class="color-box comparing"></div>
+                <span>Comparing</span>
+            </div>
+            <div class="legend-item">
+                <div class="color-box pivot"></div>
+                <span>Pivot</span>
+            </div>
+            <div class="legend-item">
+                <div class="color-box sorted"></div>
+                <span>Sorted</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-section">
+        <div class="stat-card">
+            <h3>Comparisons</h3>
+            <span id="comparisonCount">0</span>
+        </div>
+        <div class="stat-card">
+            <h3>Swaps</h3>
+            <span id="swapCount">0</span>
+        </div>
+        <div class="stat-card">
+            <h3>Time Elapsed</h3>
+            <span id="timeElapsed">0.00s</span>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="complexity-info">
+            <h2>Time Complexity</h2>
+            <div class="complexity-grid">
+                <div class="complexity-item">
+                    <span class="label">Best Case:</span>
+                    <span class="value">O(n log n)</span>
+                </div>
+                <div class="complexity-item">
+                    <span class="label">Average Case:</span>
+                    <span class="value">O(n log n)</span>
+                </div>
+                <div class="complexity-item">
+                    <span class="label">Worst Case:</span>
+                    <span class="value">O(n²)</span>
+                </div>
+                <div class="complexity-item">
+                    <span class="label">Space:</span>
+                    <span class="value">O(log n)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="menu-code">
+    <div class="implementation-container">
+        <div class="implementation-controls">
+            <button class="control-button">
+                <i class="material-icons">play_arrow</i>
+                Run Code
+            </button>
+            <button class="control-button">
+                <i class="material-icons">refresh</i>
+                Reset
+            </button>
+            <button class="control-button">
+                <i class="material-icons">save</i>
+                Save
+            </button>
+        </div>
+
+        <div class="entry-point-container">
+            <label for="entry-point">Entry Point:</label>
+            <input type="text" id="entry-point" placeholder="Enter your code here...">
+        </div>
+
+        <div class="code-section">
+            <div class="code-section-header">
+                <h3>Implementation</h3>
+                <div class="code-actions">
+                    <button class="control-button">
+                        <i class="material-icons">content_copy</i>
+                    </button>
+                </div>
+            </div>
+            <div id="code-editor"></div>
+        </div>
+
+        <div id="error" style="display: none;">
+            <div id="error-title">
+                <i class="material-icons">error</i>
+                <span>Error</span>
+            </div>
+            <div id="error-content"></div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

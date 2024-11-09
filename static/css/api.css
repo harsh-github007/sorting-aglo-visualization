@@ -1,0 +1,16 @@
+#api-description-box {
+    margin: auto;
+    font-size: 25px;
+    max-width: 850px;
+    position: relative;
+}
+
+.description-content {
+    font-size: 22px;
+}
+
+.api-subtitle {
+    font-family: 'Electrolize', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
