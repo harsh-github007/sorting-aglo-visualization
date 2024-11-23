@@ -33,6 +33,6 @@ python app.py
 
 ## Notes
 
-This website has been made using purely vanilla JS, HTML, CSS and Flask.
+This website has been made using purely vanilla JS, HTML, CSS.
 Feedback and contributions are appreciated!
 Consider adding a :star: to this repository to support the project!
