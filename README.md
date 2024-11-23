@@ -1,26 +1,24 @@
 # Welcome to Sort Visualizer!
 
-## The sorting algorithms currently available are:
-
+## Efficient Algorithms
 - Quick Sort
 - Merge Sort
 - Heap Sort
+
+## Simple Algorithms
 - Bubble Sort
-- Selection Sort
 - Insertion Sort
-- Gnome Sort
-- Shaker Sort
-- Odd Even Sort
-- Pancake Sort
-- Bitonic Sort
+- Selection Sort
+
+## Special Purpose
 - Radix Sort
 - Shell Sort
-- Comb Sort
+- Bitonic Sort
+
+## Experimental & Fun
 - Bogo Sort
-
-## Custom Sort
-
-It's also possible to design and visualize _your own sorting algorithm_, using the [documented APIs](https://www.sortvisualizer.com/docs). Have fun messing around and trying new stuff!
+- Pancake Sort
+- Gnome Sort
 
 ## Running locally
 
