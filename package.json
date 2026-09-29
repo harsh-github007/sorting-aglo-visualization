@@ -1,0 +1,10 @@
+{
+  "name": "sort-bench",
+  "version": "1.0.0",
+  "description": "Interactive sorting algorithm visualizer with timeline scrubbing and race mode",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/algorithms.test.js"
+  },
+  "license": "MIT"
+}

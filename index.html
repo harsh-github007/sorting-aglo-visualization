@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- page:head -->
+<title>Sort Bench</title>
+<meta name="description" content="Watch nine sorting algorithms run step by step, scrub back and forth, and race two of them on the same input.">
+<meta name="theme-color" content="#FF3300">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<!-- /page:head -->
+</head>
+<body>
+<!-- page:body -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-play" viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 16 16"><path d="M4 2.5h3v11H4zm5 0h3v11H9z"/></symbol>
+  <symbol id="i-back" viewBox="0 0 16 16"><path d="M3 2.5h2v11H3zm10 0v11L6 8z"/></symbol>
+  <symbol id="i-fwd" viewBox="0 0 16 16"><path d="M11 2.5h2v11h-2zM3 2.5v11L10 8z"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 16 16"><path d="M2 2.5h2v11H2zm7 0v11L4.5 8zm6 0v11L10.5 8z"/></symbol>
+  <symbol id="i-dice" viewBox="0 0 16 16"><path d="M3 2h10a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm1.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm7 5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM8 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></symbol>
+  <symbol id="i-theme" viewBox="0 0 16 16"><path d="M8 1.5a6.5 6.5 0 1 0 0 13zM8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0z"/></symbol>
+  <symbol id="i-gh" viewBox="0 0 16 16"><path d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.05-.49.05-.49.8.06 1.23.83 1.23.83.72 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 8 0z"/></symbol>
+  <symbol id="logo" viewBox="0 0 26 26"><rect width="26" height="26" rx="6" fill="var(--accent)"/><rect x="6" y="14" width="3.4" height="6" rx=".8" fill="var(--on-accent)"/><rect x="11.3" y="10" width="3.4" height="10" rx=".8" fill="var(--on-accent)"/><rect x="16.6" y="6" width="3.4" height="14" rx=".8" fill="var(--on-accent)"/></symbol>
+</svg>
+
+<nav class="nav" aria-label="Main">
+  <div class="container">
+    <a class="logo" href="#top"><svg aria-hidden="true"><use href="#logo"/></svg>Sort Bench</a>
+    <div class="nav-links">
+      <a href="#bench">Bench</a>
+      <a href="#compare">Compare</a>
+      <a href="#how">How it works</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn icon" id="themeBtn" type="button" title="Switch light / dark" aria-label="Switch light or dark theme"><svg><use href="#i-theme"/></svg></button>
+      <a class="btn" href="https://github.com/harsh-github007/sorting-aglo-visualization"><svg aria-hidden="true"><use href="#i-gh"/></svg><span class="btn-label">Source</span> <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container">
+    <div class="hero-copy">
+      <p class="eyebrow">Sorting algorithms, visualised</p>
+      <h1>See what every <em>comparison</em> costs</h1>
+      <p class="lede">Run nine classic algorithms on the same data, step backwards through any run, and race two of them head to head. The counters update as each sort works, so the gap between O(n²) and O(n log n) shows up in real numbers.</p>
+      <div class="cta">
+        <a class="btn accent" href="#bench" id="heroPlay">Start sorting <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn" href="#compare">Compare all nine</a>
+      </div>
+    </div>
+    <div class="facts" aria-label="At a glance">
+      <div><b>9</b><span>Algorithms</span></div>
+      <div><b>256</b><span>Bars, maximum</span></div>
+      <div><b>0</b><span>Dependencies</span></div>
+      <div><b>32</b><span>Automated tests</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="bench-sec" id="bench" aria-label="Visualizer">
+  <div class="container">
+    <main class="bench">
+      <div class="stage-col">
+        <div class="panels" id="panels"></div>
+
+        <div class="transport" role="group" aria-label="Playback">
+          <button class="btn icon" id="resetBtn" type="button" title="Restart (R)" aria-label="Restart"><svg><use href="#i-reset"/></svg></button>
+          <button class="btn icon" id="backBtn" type="button" title="Step back (←)" aria-label="Step back"><svg><use href="#i-back"/></svg></button>
+          <button class="btn dark" id="playBtn" type="button" title="Play / pause (Space)"><svg><use href="#i-play"/></svg><span>Play</span></button>
+          <button class="btn icon" id="fwdBtn" type="button" title="Step forward (→)" aria-label="Step forward"><svg><use href="#i-fwd"/></svg></button>
+          <div class="timeline">
+            <input type="range" id="scrub" min="0" max="1" value="0" step="1" aria-label="Timeline">
+            <span class="opcount" id="opcount">0 / 0</span>
+          </div>
+        </div>
+
+        <div class="legend" aria-label="Colour key">
+          <span><i style="background:var(--cmp)"></i>Comparing</span>
+          <span><i style="background:var(--swap)"></i>Swapping / writing</span>
+          <span><i style="background:var(--pivot)"></i>Pivot or current minimum</span>
+          <span><i style="background:var(--done)"></i>In final position</span>
+          <span class="keys"><kbd>Space</kbd> play · <kbd>←</kbd><kbd>→</kbd> step · <kbd>R</kbd> restart · <kbd>N</kbd> new input · drag the chart to scrub</span>
+        </div>
+      </div>
+
+      <aside class="rack" aria-label="Controls">
+        <div class="group">
+          <p class="eyebrow">Algorithm</p>
+          <div class="field">
+            <label for="algoA">Sort with</label>
+            <select id="algoA"></select>
+          </div>
+          <label class="toggle" for="raceToggle">Race a second algorithm <input type="checkbox" id="raceToggle"></label>
+          <div class="field" id="algoBField" hidden>
+            <label for="algoB">Against</label>
+            <select id="algoB"></select>
+          </div>
+        </div>
+
+        <div class="group">
+          <p class="eyebrow">Input</p>
+          <div class="seg" role="radiogroup" aria-label="Input shape" id="presets"></div>
+          <div class="field">
+            <label for="size">Bars <output id="sizeOut" for="size">48</output></label>
+            <input type="range" id="size" min="8" max="256" value="48">
+          </div>
+          <button class="btn" id="newBtn" type="button"><svg><use href="#i-dice"/></svg>New input</button>
+          <div class="field">
+            <label for="custom">Your own numbers</label>
+            <div class="custom-row">
+              <input type="text" id="custom" placeholder="42, 7, 19, 3, 88" autocomplete="off" spellcheck="false" inputmode="numeric">
+              <button class="btn" id="customBtn" type="button">Use</button>
+            </div>
+            <p class="error" id="customErr" role="alert" hidden></p>
+          </div>
+        </div>
+
+        <div class="group">
+          <p class="eyebrow">Playback</p>
+          <div class="field">
+            <label for="speed">Speed <output id="speedOut" for="speed"></output></label>
+            <input type="range" id="speed" min="0" max="100" value="55">
+          </div>
+          <label class="toggle" for="sound">Sound <input type="checkbox" id="sound"></label>
+          <p class="hint">Pitch follows the value being touched, so you can hear the order form.</p>
+        </div>
+      </aside>
+
+      <section class="info" aria-label="Algorithm details">
+        <div class="info-grid" id="info"></div>
+      </section>
+    </main>
+  </div>
+</section>
+
+<section class="compare-sec" id="compare">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">Measured on your current input</p>
+      <h2 class="section-title">Same data, nine algorithms</h2>
+      <p class="lede">Every algorithm runs on the exact array shown on the bench above. Change the input shape or size and this table re-measures. Select a row to load that algorithm.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>Algorithm</th>
+            <th class="num opt">Comparisons</th><th class="num opt">Swaps</th><th class="num opt">Writes</th><th class="num">Total work</th>
+            <th class="opt">Relative work (log scale)</th><th>Average case</th>
+          </tr>
+        </thead>
+        <tbody id="compareBody"></tbody>
+      </table>
+    </div>
+    <p class="table-note" id="compareNote"></p>
+  </div>
+</section>
+
+<section class="band" id="how">
+  <div class="container">
+    <div class="sec-head">
+      <p class="eyebrow">How it works</p>
+      <h2 class="section-title">Record once, replay anywhere</h2>
+      <p class="lede">The algorithms never touch the screen. They run to completion first, and the page plays back what they did.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="n">01 · Record</span>
+        <h3>Run against a tracer</h3>
+        <p>Each algorithm sorts a copy of the array through a tracer that logs every compare, swap and write, plus the pseudocode line it came from.</p>
+        <code>{ t: 's', i: 4, j: 5, l: 6 }</code>
+      </div>
+      <div class="step">
+        <span class="n">02 · Replay</span>
+        <h3>Draw from the log</h3>
+        <p>The canvas replays the log at whatever speed you pick. Because the log is fixed, playback runs forwards or backwards equally well.</p>
+      </div>
+      <div class="step">
+        <span class="n">03 · Checkpoint</span>
+        <h3>Jump without waiting</h3>
+        <p>A snapshot is stored every 512 operations, so any point on the timeline is at most 512 replays away. Bubble sort on 256 bars is about 50,000 operations and still scrubs instantly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    <a class="logo" href="#top"><svg aria-hidden="true"><use href="#logo"/></svg>Sort Bench</a>
+    <span>Vanilla JavaScript and Canvas, no libraries</span>
+    <span>MIT licence © Harsh Raj</span>
+    <a href="https://github.com/harsh-github007/sorting-aglo-visualization">GitHub</a>
+  </div>
+</footer>
+
+<script src="js/algorithms.js"></script>
+<script src="js/app.js"></script>
+<!-- /page:body -->
+</body>
+</html>
