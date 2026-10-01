@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -14,11 +14,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <title>Sort Bench</title>
 <meta name="description" content="Watch nine sorting algorithms run step by step, scrub back and forth, and race two of them on the same input.">
-<meta name="theme-color" content="#0b0b0c">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<meta name="theme-color" content="#eeefed">
+
+
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/workspace.css">
 <!-- /page:head -->
 </head>
 <body>
@@ -39,7 +39,7 @@
   <div class="container">
     <a class="logo" href="#top"><svg aria-hidden="true"><use href="#logo"/></svg>Sort Bench</a>
     <div class="nav-links">
-      <a href="#bench">Bench</a>
+      <a href="#bench">Explore</a>
       <a href="#compare">Compare</a>
       <a href="#how">How it works</a>
     </div>
@@ -53,19 +53,18 @@
 <header class="hero" id="top">
   <div class="container">
     <div class="hero-copy">
-      <p class="eyebrow">[ Sorting algorithms · visualised ]</p>
-      <h1>See what every <em>comparison</em> costs</h1>
-      <p class="lede">Run nine classic algorithms on the same data, step backwards through any run, and race two of them head to head. The counters update as each sort works, so the gap between O(n²) and O(n log n) shows up in real numbers.</p>
+
+      <h1>A little order.<br><em>A lot to discover.</em></h1>
+      <p class="lede">Watch nine sorting algorithms think through the same numbers. Pause at a comparison, step back, or race two approaches to see why their work differs.</p>
       <div class="cta">
         <a class="btn accent" href="#bench" id="heroPlay">Start sorting <span class="arrow" aria-hidden="true">→</span></a>
         <a class="btn" href="#compare">Compare all nine</a>
       </div>
     </div>
-    <div class="facts" aria-label="At a glance">
-      <div><b>9</b><span>Algorithms</span></div>
-      <div><b>256</b><span>Bars, maximum</span></div>
-      <div><b>0</b><span>Dependencies</span></div>
-      <div><b>32</b><span>Automated tests</span></div>
+    <div class="first-lesson">
+      <h2>Start with five numbers</h2>
+      <p>Try 42, 7, 19, 3, 88 with Bubble sort. Step forward to watch neighbouring values trade places. Then race it against Quicksort.</p>
+      <button class="btn" type="button" id="lessonBtn">Load the guided example</button>
     </div>
   </div>
 </header>
@@ -118,14 +117,14 @@
             <input type="range" id="size" min="8" max="256" value="48">
           </div>
           <button class="btn" id="newBtn" type="button"><svg><use href="#i-dice"/></svg>New input</button>
-          <div class="field">
+          <details class="custom-details"><summary>Use your own numbers</summary><div class="field">
             <label for="custom">Your own numbers</label>
             <div class="custom-row">
               <input type="text" id="custom" placeholder="42, 7, 19, 3, 88" autocomplete="off" spellcheck="false" inputmode="numeric">
               <button class="btn" id="customBtn" type="button">Use</button>
             </div>
             <p class="error" id="customErr" role="alert" hidden></p>
-          </div>
+          </div></details>
         </div>
 
         <div class="group">
@@ -149,7 +148,7 @@
 <section class="compare-sec" id="compare">
   <div class="container">
     <div class="sec-head">
-      <p class="eyebrow">Measured on your current input</p>
+
       <h2 class="section-title">Same data, nine algorithms</h2>
       <p class="lede">Every algorithm runs on the exact array shown on the bench above. Change the input shape or size and this table re-measures. Select a row to load that algorithm.</p>
     </div>
@@ -172,7 +171,7 @@
 <section class="band" id="how">
   <div class="container">
     <div class="sec-head">
-      <p class="eyebrow">How it works</p>
+
       <h2 class="section-title">Record once, replay anywhere</h2>
       <p class="lede">The algorithms never touch the screen. They run to completion first, and the page plays back what they did.</p>
     </div>
@@ -208,6 +207,8 @@
 
 <script src="js/algorithms.js"></script>
 <script src="js/app.js"></script>
+<script src="js/lesson.js"></script>
+<script src="js/material.js"></script>
 <!-- /page:body -->
 </body>
 </html>
